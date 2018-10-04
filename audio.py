@@ -151,5 +151,6 @@ async def leave(ctx):
     await voice_client.disconnect()
     songs.clear()
 
+    BOT_TOKEN = NDgyODI5OTk4NjgwNTcxOTEx.DpeOXg.G7THRBSeVCQlYG_3_C1yMnj9jAo
 
 bot.run(os.environ['BOT_TOKEN'])
