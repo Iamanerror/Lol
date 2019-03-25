@@ -1,7 +1,11 @@
 discord
-
 asyncio
-
 youtube-dl
-
 PyNaCl
+requests
+aiohttp
+aiomysql
+aioredis
+beautifulsoup4
+rethinkdb
+Pillow
