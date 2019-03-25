@@ -32,11 +32,11 @@ start_time = time.time()
 def __init__(self, bot):
         self.bot = bot
 
-    async def __is_enabled(self, guild: int):
-        if await r.table("imgwelcome").get(str(guild)).run(self.bot.r_conn):
-            return True
-        else:
-            return False
+async def __is_enabled(self, guild: int):
+    if await r.table("imgwelcome").get(str(guild)).run(self.bot.r_conn):
+        return True
+    else:
+        return False
 
 
 with open("prefixes.json") as f:
