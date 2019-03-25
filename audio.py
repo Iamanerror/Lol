@@ -209,14 +209,6 @@ async def imgwelcome_text(self, ctx, *, text: str):
         await r.table("imgwelcome").get(str(ctx.guild.id)).update({"content": text}).run(self.bot.r_conn)
         await ctx.send("Updated text!")
 
-@bot.command(name="channel")
-async def imgwelcome_channel(self, ctx, channel: discord.TextChannel):
-        """Select a channel to use for imgwelcoming, can be a channel mention or the exact name of it"""
-        if not await self.__is_enabled(ctx.guild.id):
-            return await ctx.send("Enable imgwelcoming with n!imgwelcome toggle")
-
-        await r.table("imgwelcome").get(str(ctx.guild.id)).update({"channel": str(channel.id)}).run(self.bot.r_conn)
-        await ctx.send("Updated to %s" % channel.name)
 
 
 @bot.event
