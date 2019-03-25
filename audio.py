@@ -10,6 +10,12 @@ import aiohttp
 import requests
 import string
 import translate
+from PIL import Image, ImageDraw, ImageFont, ImageOps
+import discord, os, aiohttp
+from io import BytesIO
+import textwrap
+import rethinkdb as r
+import base64
 import discord, datetime, time
 from translate import Translator
 from discord import Game, Embed, Color, Status, ChannelType
@@ -22,6 +28,15 @@ import requests as rq
 import random
 
 start_time = time.time()
+
+def __init__(self, bot):
+        self.bot = bot
+
+    async def __is_enabled(self, guild: int):
+        if await r.table("imgwelcome").get(str(guild)).run(self.bot.r_conn):
+            return True
+        else:
+            return False
 
 
 with open("prefixes.json") as f:
@@ -49,7 +64,6 @@ async def prefix_error(error, ctx):
 		text = "Sorry {}, you do not have a administrator permission to use this command.".format(ctx.message.author.mention)
 		await bot.send_message(ctx.message.channel, text)	
 	
-bot.remove_command('help')
 
 
 
