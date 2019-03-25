@@ -9,7 +9,6 @@ import json
 import aiohttp
 import requests
 import string
-import translate
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 import discord, os, aiohttp
 from io import BytesIO
@@ -17,7 +16,6 @@ import textwrap
 import rethinkdb as r
 import base64
 import discord, datetime, time
-from translate import Translator
 from discord import Game, Embed, Color, Status, ChannelType
 from discord.ext import commands
 from discord.ext.commands import Bot
